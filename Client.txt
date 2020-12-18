@@ -1,0 +1,37 @@
+
+import java.net.*;
+import java.io.*;
+
+
+    public class Client {
+        public static void main(String[] args) {
+
+            try {
+                String k ="";
+                String strCurrentLine;
+                Socket s = new Socket("localhost", 1999);
+                BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\PS Marketing\\Documents\\temp.txt"));
+                byte []b = new byte[30];
+
+                while ((strCurrentLine = br.readLine()) != null) {
+                    k = k+strCurrentLine+'\n';
+                    System.out.println(strCurrentLine);
+
+                }
+
+
+
+
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                dos.writeUTF(k);
+
+
+
+
+                System.out.println("Transfer Complete");
+            } catch (IOException ie) {
+                ie.printStackTrace();
+            }
+        }
+    }
+
