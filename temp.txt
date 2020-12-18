@@ -1,0 +1,3 @@
+Day:           1           2           3           4           5
+temp:          12c         15c         17c         14c         14c
+humidity:      110dt       161dt       131dt       122dt       101dt
